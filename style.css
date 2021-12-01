@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background: white;
+    box-shadow: 1px 1px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 70%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.box__left {
+    display: flex;
+    height: 90vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+.box__left .photo {
+    width: 100%;
+    animation: zoom 10s;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.box__right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 90vh;
+    align-items: center;
+}
+
+.box__right .box__description {
+    width: 80%;
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box__description .box__title {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.box__description .box__title::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(to right, #8a2387, #e94057);
+}
+
+.box__description .box__title::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 30%;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(to right, #8a2387, #e94057);
+    animation: slide 2s;
+}
+
+@keyframes slide {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 30%;
+    }
+}
+.box__right .box__inputs {
+    width: 80%;
+}
+
+.input__field {
+    position: relative;
+    margin-bottom: 2vh;
+}
+
+.input__field .input__user {
+    letter-spacing: .3px;
+    width: 100% ;
+    font-size: .9em;
+    padding: .5rem 0;
+}
+
+.input__field .input__user::placeholder {
+    color: rgba(0, 0, 0, .5);
+}
+
+.input__field .underline::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 5px;
+    background: rgba(0, 0, 0, .2);
+}
+
+.input__field .underline::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 5px;
+    background: linear-gradient(45deg, #8a2387, #e94057, #f27121);
+    transform: scaleX(0);
+}
+
+.input__field .input__user:focus ~ .underline::after {
+    transform: scaleX(1);
+    transition: .5s;
+}
+
+.input__field #input-message {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    padding-left: 5px;
+    resize: none;
+}
+
+#input-submit {
+    color: black;
+    background: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 3rem;
+    letter-spacing: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+#input-submit:hover {
+    color: white;
+    background: #000000;
+    border: 0; 
+    letter-spacing: 0;
+}
